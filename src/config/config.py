@@ -1,9 +1,8 @@
 import os
-import dotenv
 
-dotenv.load_dotenv()
+MONGO_URI = f"mongodb+srv://{os.getenv('MONGO_USER')}:{os.getenv('MONGO_PWD')}@cluster.mongodb.net/controle_despesas"
+SECRET_KEY = os.getenv("SECRET_KEY", "sua_chave_secreta")
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-# a "URL DO FRONT" é o localhost fornecido pelo front-end. ( Ex: http://localhost:5173 )
-config = {
-    "client_url": "http://localhost:5173" if os.getenv("ENVIRONMENT") == "dev" else ""
-}
+n
